@@ -3,4 +3,7 @@
     <string name="title">Whack-A-Mole!</string>
     <string name="begin">Whack!</string>
     <string name="stats">Stats</string>
+    <string name="username_banner">Enter Username:</string>
+    <string name="default_entry">Hello, my name is..</string>
+
 </resources>

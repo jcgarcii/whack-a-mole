@@ -35,6 +35,15 @@
 
         <activity
             android:name=".Activities.gameActivity"
+            android:parentActivityName=".Activities.authActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".Activities.authActivity" />
+        </activity>
+
+        <activity
+            android:name=".Activities.statsActivity"
             android:parentActivityName=".Activities.MainActivity"
             android:exported="true">
             <meta-data
