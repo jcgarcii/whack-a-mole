@@ -5,7 +5,9 @@
       <map>
         <entry key="..\:/Users/carlo/AndroidStudioProjects/cpre388/whackamole/app/src/main/res/drawable/circle_button.xml" value="0.2265" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/cpre388/whackamole/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/cpre388/whackamole/app/src/main/res/layout/activity_auth.xml" value="0.25" />
         <entry key="..\:/Users/carlo/AndroidStudioProjects/cpre388/whackamole/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="..\:/Users/carlo/AndroidStudioProjects/cpre388/whackamole/app/src/main/res/layout/authentication.xml" value="0.24895833333333334" />
       </map>
     </option>
   </component>
