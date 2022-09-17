@@ -7,6 +7,22 @@
     android:background="@mipmap/game_background"
     tools:context=".Activities.gameActivity">
 
+    <TextView
+        android:id="@+id/user"
+        android:layout_width="211dp"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        android:fontFamily="@font/atomic_age"
+        android:gravity="start|center"
+        android:text="@string/current_user"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:theme="@style/Base.CardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/mole10"
         android:layout_width="221dp"
@@ -89,21 +105,19 @@
 
     <TextView
         android:id="@+id/score_board"
-        android:layout_width="235sp"
-        android:layout_height="50sp"
-        android:layout_marginTop="30sp"
+        android:layout_width="211dp"
+        android:layout_height="50dp"
         android:background="@color/white"
         android:fontFamily="@font/atomic_age"
         android:gravity="start|center"
-        android:text="Score: 0"
+        android:text="@string/default_score"
         android:textAppearance="@style/TextAppearance.AppCompat.Display3"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="35sp"
         android:theme="@style/Base.CardView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/user" />
 
     <ImageView
         android:id="@+id/mole1"

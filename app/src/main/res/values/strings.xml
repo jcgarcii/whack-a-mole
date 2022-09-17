@@ -5,5 +5,7 @@
     <string name="stats">Stats</string>
     <string name="username_banner">Enter Username:</string>
     <string name="default_entry">Hello, my name is..</string>
+    <string name="default_score">Score:</string>
+    <string name="current_user">User:</string>
 
 </resources>

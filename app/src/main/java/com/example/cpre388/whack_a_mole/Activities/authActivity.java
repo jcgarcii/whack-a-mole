@@ -20,27 +20,28 @@ import com.example.cpre388.whack_a_mole.R;
  */
 public class authActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.cpre388.whack_a_mole.MESSAGE";
+    ImageView logo;
+    EditText name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
+        //Assign ID's to our objects:
+        logo = findViewById(R.id.moleLogo);
+        name = findViewById(R.id.editTextTextPersonName);
 
-        ImageView logo = findViewById(R.id.moleLogo);
 
-        //Initialize Logo on Auth screen:
         logo.setImageResource(R.drawable.mole_main);
     }
 
     public void onNameEntered(View view){
         //Initialize Intent
-        Intent  game = new Intent(this, gameActivity.class);
+        Intent game = new Intent(this, gameActivity.class);
         //EditText, String:
-        EditText name = findViewById(R.id.editTextTextPersonName);
         String mName = name.getText().toString();
         //puts extra, starts game activity:
         game.putExtra(EXTRA_MESSAGE, mName);
         startActivity(game);
-
     }
 }

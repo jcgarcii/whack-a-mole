@@ -44,6 +44,7 @@ ImageView logo;
 
     public void onWhackPressed(View view){
         Intent auth = new Intent(MainActivity.this, authActivity.class);
+        music.stop();
         startActivity(auth);
     }
 
@@ -53,6 +54,7 @@ ImageView logo;
      */
     public void onStatsPressed(View view){
         Intent stats = new Intent(MainActivity.this, gameActivity.class);
+        music.stop();
         startActivity(stats);
     }
 
