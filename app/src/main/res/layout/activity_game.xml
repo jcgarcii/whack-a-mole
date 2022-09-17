@@ -11,7 +11,6 @@
         android:id="@+id/mole10"
         android:layout_width="221dp"
         android:layout_height="154dp"
-        android:layout_marginTop="6dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mole8"
         tools:srcCompat="@sample/withoutMole.png" />
@@ -20,8 +19,6 @@
         android:id="@+id/mole9"
         android:layout_width="179dp"
         android:layout_height="160dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginEnd="5dp"
         app:layout_constraintEnd_toStartOf="@+id/mole10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mole6"
@@ -38,10 +35,8 @@
 
     <ImageView
         android:id="@+id/mole6"
-        android:layout_width="155dp"
-        android:layout_height="123dp"
-        android:layout_marginTop="6dp"
-        android:layout_marginEnd="8dp"
+        android:layout_width="157dp"
+        android:layout_height="126dp"
         app:layout_constraintEnd_toStartOf="@+id/mole7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mole4"
@@ -66,18 +61,17 @@
 
     <ImageView
         android:id="@+id/mole2"
-        android:layout_width="93dp"
-        android:layout_height="110dp"
+        android:layout_width="102dp"
+        android:layout_height="123dp"
         android:layout_marginTop="31dp"
-        android:layout_marginEnd="10dp"
         app:layout_constraintEnd_toStartOf="@+id/mole3"
         app:layout_constraintTop_toBottomOf="@+id/score_board"
         tools:srcCompat="@sample/withoutMole.png" />
 
     <ImageView
         android:id="@+id/mole4"
-        android:layout_width="223dp"
-        android:layout_height="141dp"
+        android:layout_width="231dp"
+        android:layout_height="142dp"
         android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mole1"
