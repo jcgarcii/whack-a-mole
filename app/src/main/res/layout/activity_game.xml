@@ -7,6 +7,92 @@
     android:background="@mipmap/game_background"
     tools:context=".Activities.gameActivity">
 
+    <ImageView
+        android:id="@+id/mole10"
+        android:layout_width="221dp"
+        android:layout_height="154dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mole8"
+        tools:srcCompat="@sample/withoutMole.png" />
+
+    <ImageView
+        android:id="@+id/mole9"
+        android:layout_width="179dp"
+        android:layout_height="160dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="5dp"
+        app:layout_constraintEnd_toStartOf="@+id/mole10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mole6"
+        tools:srcCompat="@sample/withoutMole.png" />
+
+    <ImageView
+        android:id="@+id/mole7"
+        android:layout_width="101dp"
+        android:layout_height="119dp"
+        android:layout_marginEnd="6dp"
+        app:layout_constraintEnd_toStartOf="@+id/mole8"
+        app:layout_constraintTop_toBottomOf="@+id/mole5"
+        tools:srcCompat="@sample/withoutMole.png" />
+
+    <ImageView
+        android:id="@+id/mole6"
+        android:layout_width="155dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toStartOf="@+id/mole7"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mole4"
+        tools:srcCompat="@sample/withoutMole.png" />
+
+    <ImageView
+        android:id="@+id/mole8"
+        android:layout_width="141dp"
+        android:layout_height="125dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mole5"
+        tools:srcCompat="@sample/withoutMole.png" />
+
+    <ImageView
+        android:id="@+id/mole3"
+        android:layout_width="135dp"
+        android:layout_height="127dp"
+        android:layout_marginTop="26dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score_board"
+        tools:srcCompat="@sample/withoutMole.png" />
+
+    <ImageView
+        android:id="@+id/mole2"
+        android:layout_width="93dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/mole3"
+        app:layout_constraintTop_toBottomOf="@+id/score_board"
+        tools:srcCompat="@sample/withoutMole.png" />
+
+    <ImageView
+        android:id="@+id/mole4"
+        android:layout_width="223dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mole1"
+        tools:srcCompat="@sample/withoutMole.png" />
+
+    <ImageView
+        android:id="@+id/mole5"
+        android:layout_width="176dp"
+        android:layout_height="147dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mole4"
+        app:layout_constraintTop_toBottomOf="@+id/mole3"
+        tools:srcCompat="@sample/withoutMole.png" />
+
     <TextView
         android:id="@+id/score_board"
         android:layout_width="235sp"
@@ -24,5 +110,16 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/mole1"
+        android:layout_width="171dp"
+        android:layout_height="122dp"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="3dp"
+        app:layout_constraintEnd_toStartOf="@+id/mole2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score_board"
+        tools:srcCompat="@sample/withoutMole.png" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
