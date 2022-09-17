@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_tertiary30"
+    tools:context=".Activities.MainActivity">
+
+    <ImageView
+        android:id="@+id/moleLogo"
+        android:layout_width="200sp"
+        android:layout_height="230sp"
+        android:layout_marginTop="100sp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@sample/moleMain.png" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="406dp"
+        android:layout_height="115dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/atomic_age"
+        android:gravity="center"
+        android:text="Whack-A-Mole!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:theme="@style/Base.CardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moleLogo" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/whack"
+        android:layout_width="199dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="60dp"
+        android:background="@color/white"
+        android:fontFamily="@font/atomic_age"
+        android:text="Whack!"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/stats"
+        android:layout_width="104dp"
+        android:layout_height="91dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/circle_button"
+        android:fontFamily="@font/atomic_age"
+        android:text="STATS"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
