@@ -32,6 +32,12 @@ public class statsActivity extends AppCompatActivity {
         String set = readFromFile(this);
         leaderboard.setText(set);
     }
+
+    /**
+     * Fetches input from a file:
+     * @param context
+     * @return
+     */
     private String readFromFile(Context context) {
         String ret = "";
         try {

@@ -48,6 +48,11 @@ public class overActivity extends AppCompatActivity {
         startActivity(home);
     }
 
+    /**
+     * Outputs score onto output file
+     * @param data
+     * @param context
+     */
     private void writeToFile(String data,Context context) {
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("leaderboard.txt", Context.MODE_PRIVATE));
