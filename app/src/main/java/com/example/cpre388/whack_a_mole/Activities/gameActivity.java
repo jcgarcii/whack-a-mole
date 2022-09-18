@@ -123,101 +123,169 @@ public class gameActivity extends AppCompatActivity {
 
     public void onMoleOne(View view){
         Boolean check = moleOne.getMole();
-        if(check){
-            currentUser.addPoint();
+        Boolean clicked = moleOne.isSelected();
 
-        }
-        else{
+        if(clicked == true){
             currentUser.doNothing();
         }
-
+        else{
+            if(check){
+                currentUser.addPoint();
+                moleOne.setClicked();
+            }
+            else{
+                currentUser.doNothing();
+            }
+        }
     }
     public void onMoleTwo(View view){
         Boolean check = moleTwo.getMole();
-        if(check){
-            currentUser.addPoint();
-        }
-        else{
+        Boolean clicked = moleTwo.isSelected();
+
+        if(clicked == true){
             currentUser.doNothing();
+        }
+        else {
+            if (check) {
+                currentUser.addPoint();
+                moleTwo.setClicked();
+            } else {
+                currentUser.doNothing();
+            }
         }
 
     }
     public void onMoleThree(View view){
         Boolean check = moleThree.getMole();
-        if(check){
-            currentUser.addPoint();
+        Boolean clicked = moleThree.isSelected();
+
+        if(clicked == true){
+            currentUser.doNothing();
         }
         else{
-            currentUser.doNothing();
+            if(check){
+                currentUser.addPoint();
+                moleThree.setClicked();
+            }
+            else{
+                currentUser.doNothing();
+            }
         }
 
     }
     public void onMoleFour(View view){
         Boolean check = moleFour.getMole();
-        if(check){
-            currentUser.addPoint();
-        }
-        else{
+        Boolean clicked = moleFour.isSelected();
+
+        if(clicked == true){
             currentUser.doNothing();
+        }
+        else {
+            if (check) {
+                currentUser.addPoint();
+                moleFour.setClicked();
+            } else {
+                currentUser.doNothing();
+            }
         }
 
     }
     public void onMoleFive(View view){
         Boolean check = moleFive.getMole();
-        if(check){
-            currentUser.addPoint();
-        }
-        else{
+        Boolean clicked = moleFive.isSelected();
+
+        if(clicked == true){
             currentUser.doNothing();
+        }
+        else {
+            if (check) {
+                currentUser.addPoint();
+                moleFive.setClicked();
+            } else {
+                currentUser.doNothing();
+            }
         }
 
     }
     public void onMoleSix(View view){
         Boolean check = moleSix.getMole();
-        if(check){
-            currentUser.addPoint();
-        }
-        else{
+        Boolean clicked = moleSix.isSelected();
+
+        if(clicked == true){
             currentUser.doNothing();
+        }
+        else {
+            if (check) {
+                currentUser.addPoint();
+                moleSix.setClicked();
+            } else {
+                currentUser.doNothing();
+            }
         }
     }
     public void onMoleSeven(View view){
         Boolean check = moleSeven.getMole();
-        if(check){
-            currentUser.addPoint();
-        }
-        else{
+        Boolean clicked = moleSeven.isSelected();
+        if(clicked == true){
             currentUser.doNothing();
+        }
+        else {
+            if (check) {
+                currentUser.addPoint();
+                moleSeven.setClicked();
+            } else {
+                currentUser.doNothing();
+            }
         }
 
     }
     public void onMoleEight(View view){
         Boolean check = moleEight.getMole();
-        if(check){
-            currentUser.addPoint();
-        }
-        else{
+        Boolean clicked = moleEight.isSelected();
+
+        if(clicked == true){
             currentUser.doNothing();
         }
-
+        else {
+            if (check) {
+                currentUser.addPoint();
+                moleEight.setClicked();
+            } else {
+                currentUser.doNothing();
+            }
+        }
     }
     public void onMoleNine(View view){
         Boolean check = moleNine.getMole();
-        if(check){
-            currentUser.addPoint();
-        }
-        else{
+        Boolean clicked = moleNine.isSelected();
+
+        if(clicked == true){
             currentUser.doNothing();
+        }
+        else {
+            if (check) {
+                currentUser.addPoint();
+                moleNine.setClicked();
+            } else {
+                currentUser.doNothing();
+            }
         }
 
     }
     public void onMoleTen(View view){
         Boolean check = moleTen.getMole();
-        if(check){
-            currentUser.addPoint();
-        }
-        else{
+        Boolean clicked = moleTen.isSelected();
+
+        if(clicked == true){
             currentUser.doNothing();
+        }
+        else {
+            if (check) {
+                currentUser.addPoint();
+                moleTen.setClicked();
+            } else {
+                currentUser.doNothing();
+            }
         }
     }
     public Runnable health = new Runnable() {

@@ -7,12 +7,14 @@ package com.example.cpre388.whack_a_mole.Models;
 public class moleModel{
     //Tracks if Mole is active
     private boolean isActive;
+    private boolean selected;
 
     /**
      * Initialize Mole Model
      */
     public moleModel(){
         isActive = false;
+        selected = false;
     }
 
     /**
@@ -23,10 +25,18 @@ public class moleModel{
     }
 
     /**
+     * Indicates if the mole has been clicked to prevent spam abuse
+     */
+    public void setClicked(){
+        selected = true;
+    }
+
+    /**
      * Clears the Mole
      */
     public void clear(){
         isActive = false;
+        selected = false;
     }
 
     /**
@@ -35,5 +45,13 @@ public class moleModel{
      */
     public boolean getMole(){
         return isActive;
+    }
+
+    /**
+     * Returns if the mole has been clicked
+     * @return : selected - disallows the reclicking of a mole
+     */
+    public boolean isSelected() {
+        return selected;
     }
 }
