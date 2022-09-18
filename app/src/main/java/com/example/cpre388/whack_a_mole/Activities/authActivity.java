@@ -7,12 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-
 import com.example.cpre388.whack_a_mole.R;
+
 
 /**
  * Authentication Activity simply collects a username for leaderboard tracking.
@@ -23,6 +22,10 @@ public class authActivity extends AppCompatActivity {
     ImageView logo;
     EditText name;
 
+    /**
+     * Activity's onCreate() method
+     * @param savedInstanceState
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,11 +33,14 @@ public class authActivity extends AppCompatActivity {
         //Assign ID's to our objects:
         logo = findViewById(R.id.moleLogo);
         name = findViewById(R.id.editTextTextPersonName);
-
-
+        //Set Logo
         logo.setImageResource(R.drawable.mole_main);
     }
 
+    /**
+     * Button Listener - takes username input and starts the game activity.
+     * @param view
+     */
     public void onNameEntered(View view){
         //Initialize Intent
         Intent game = new Intent(this, gameActivity.class);

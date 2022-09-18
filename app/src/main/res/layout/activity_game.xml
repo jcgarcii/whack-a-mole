@@ -27,6 +27,7 @@
         android:id="@+id/mole10"
         android:layout_width="221dp"
         android:layout_height="154dp"
+        android:onClick="onMoleTen"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mole8"
         tools:srcCompat="@sample/withoutMole.png" />
@@ -35,6 +36,7 @@
         android:id="@+id/mole9"
         android:layout_width="179dp"
         android:layout_height="160dp"
+        android:onClick="onMoleNine"
         app:layout_constraintEnd_toStartOf="@+id/mole10"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mole6"
@@ -45,6 +47,7 @@
         android:layout_width="101dp"
         android:layout_height="119dp"
         android:layout_marginEnd="6dp"
+        android:onClick="onMoleSeven"
         app:layout_constraintEnd_toStartOf="@+id/mole8"
         app:layout_constraintTop_toBottomOf="@+id/mole5"
         tools:srcCompat="@sample/withoutMole.png" />
@@ -53,6 +56,7 @@
         android:id="@+id/mole6"
         android:layout_width="157dp"
         android:layout_height="126dp"
+        android:onClick="onMoleSix"
         app:layout_constraintEnd_toStartOf="@+id/mole7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mole4"
@@ -62,6 +66,7 @@
         android:id="@+id/mole8"
         android:layout_width="141dp"
         android:layout_height="125dp"
+        android:onClick="onMoleEight"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mole5"
         tools:srcCompat="@sample/withoutMole.png" />
@@ -71,6 +76,7 @@
         android:layout_width="135dp"
         android:layout_height="127dp"
         android:layout_marginTop="26dp"
+        android:onClick="onMoleThree"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/score_board"
         tools:srcCompat="@sample/withoutMole.png" />
@@ -80,6 +86,7 @@
         android:layout_width="102dp"
         android:layout_height="123dp"
         android:layout_marginTop="31dp"
+        android:onClick="onMoleTwo"
         app:layout_constraintEnd_toStartOf="@+id/mole3"
         app:layout_constraintTop_toBottomOf="@+id/score_board"
         tools:srcCompat="@sample/withoutMole.png" />
@@ -89,6 +96,7 @@
         android:layout_width="231dp"
         android:layout_height="142dp"
         android:layout_marginTop="4dp"
+        android:onClick="onMoleFour"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mole1"
         tools:srcCompat="@sample/withoutMole.png" />
@@ -98,6 +106,7 @@
         android:layout_width="176dp"
         android:layout_height="147dp"
         android:layout_marginTop="4dp"
+        android:onClick="onMoleFive"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/mole4"
         app:layout_constraintTop_toBottomOf="@+id/mole3"
@@ -125,6 +134,7 @@
         android:layout_height="122dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="3dp"
+        android:onClick="onMoleOne"
         app:layout_constraintEnd_toStartOf="@+id/mole2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/score_board"
