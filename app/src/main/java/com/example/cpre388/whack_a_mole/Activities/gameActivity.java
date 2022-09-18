@@ -1,6 +1,7 @@
 package com.example.cpre388.whack_a_mole.Activities;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.SystemClock;
@@ -18,13 +19,15 @@ import com.example.cpre388.whack_a_mole.Models.userModel;
  * Game Activity for the Application.
  */
 public class gameActivity extends AppCompatActivity {
+    public static final String EXTRA_MESSAGE = "com.example.cpre388.whack_a_mole.MESSAGE";
     //Time Values:
-    private long systemTime, elapsedTime, runningTime;
+    private long systemTime, runningTime;
     //Handler Objects:
     private Handler handler;
     private Handler check;
     private Random moleSelect;
     private int selected;
+    private String exit;
     //Mole Objects:
     moleModel moleOne; moleModel moleTwo;moleModel moleThree;
     moleModel moleFour;moleModel moleFive;moleModel moleSix;
@@ -36,6 +39,9 @@ public class gameActivity extends AppCompatActivity {
     ImageView mole1;ImageView mole2;ImageView mole3;ImageView mole4;
     ImageView mole5;ImageView mole6;ImageView mole7;ImageView mole8;
     ImageView mole9;ImageView mole10;TextView user; TextView score;
+    //Sound Effects:
+    MediaPlayer wonk;
+    MediaPlayer bruh;
 
     /**
      * onCreate() methods for this activity.
@@ -58,6 +64,8 @@ public class gameActivity extends AppCompatActivity {
         mole10 = findViewById(R.id.mole10);
         user = findViewById(R.id.user);
         score = findViewById(R.id.score_board);
+        wonk = MediaPlayer.create(gameActivity.this, R.raw.wonk);
+        bruh = MediaPlayer.create(gameActivity.this, R.raw.bruh);
         //initializes the moles:
         moleOne = new moleModel();
         moleTwo = new moleModel();
@@ -134,6 +142,7 @@ public class gameActivity extends AppCompatActivity {
         }
         else{
             if(check){
+                wonk.start();
                 currentUser.addPoint();
                 moleOne.setClicked();
                 setInitialHoles();
@@ -157,6 +166,7 @@ public class gameActivity extends AppCompatActivity {
         }
         else {
             if (check) {
+                wonk.start();
                 currentUser.addPoint();
                 moleTwo.setClicked();
                 setInitialHoles();
@@ -179,6 +189,7 @@ public class gameActivity extends AppCompatActivity {
         }
         else{
             if(check){
+                wonk.start();
                 currentUser.addPoint();
                 moleThree.setClicked();
                 setInitialHoles();
@@ -202,6 +213,7 @@ public class gameActivity extends AppCompatActivity {
         }
         else {
             if (check) {
+                wonk.start();
                 currentUser.addPoint();
                 moleFour.setClicked();
                 setInitialHoles();
@@ -224,6 +236,7 @@ public class gameActivity extends AppCompatActivity {
         }
         else {
             if (check) {
+                wonk.start();
                 currentUser.addPoint();
                 moleFive.setClicked();
                 setInitialHoles();
@@ -246,6 +259,7 @@ public class gameActivity extends AppCompatActivity {
         }
         else {
             if (check) {
+                wonk.start();
                 currentUser.addPoint();
                 moleSix.setClicked();
                 setInitialHoles();
@@ -267,6 +281,7 @@ public class gameActivity extends AppCompatActivity {
         }
         else {
             if (check) {
+                wonk.start();
                 currentUser.addPoint();
                 moleSeven.setClicked();
                 setInitialHoles();
@@ -289,6 +304,7 @@ public class gameActivity extends AppCompatActivity {
         }
         else {
             if (check) {
+                wonk.start();
                 currentUser.addPoint();
                 moleEight.setClicked();
                 setInitialHoles();
@@ -312,6 +328,7 @@ public class gameActivity extends AppCompatActivity {
         }
         else {
             if (check) {
+                wonk.start();
                 currentUser.addPoint();
                 moleNine.setClicked();
                 setInitialHoles();
@@ -334,6 +351,7 @@ public class gameActivity extends AppCompatActivity {
         }
         else {
             if (check) {
+                wonk.start();
                 currentUser.addPoint();
                 moleTen.setClicked();
                 setInitialHoles();
@@ -342,6 +360,10 @@ public class gameActivity extends AppCompatActivity {
             }
         }
     }
+
+    /**
+     * Updates the Display as well as increments the difficulty of the game
+     */
     public Runnable health = new Runnable() {
         private int points, lives;
         private String name;
@@ -354,35 +376,42 @@ public class gameActivity extends AppCompatActivity {
             lives = currentUser.getLivesLeft();
             name = currentUser.getName();
 
-            String scoreboard = String.format("Score:%d", points);
-            String text = String.format("%s - %d", name, lives);
-
-            score.setText(scoreboard);
-            user.setText(text);
-
-            //Difficulty Increments:
-            if(points <= 5){
-                runningTime = 2000;
-            }
-            else if(points > 5 && points <= 10){
-                runningTime = 1000;
-            }
-            else if(points > 10 && points <= 15){
-                runningTime = 750;
-            }
-            else if(points > 15 && points <= 20){
-                runningTime = 500;
+            if(!isAlive){
+                //Initialize Intent
+                Intent end = new Intent(gameActivity.this, overActivity.class);
+                exit = String.format("Final Score %d by %s", points, name);
+                end.putExtra(EXTRA_MESSAGE, exit);
+                bruh.stop();
+                startActivity(end);
             }
             else{
-                runningTime = 200;
+                String scoreboard = String.format("Score:%d", points);
+                String text = String.format("%s - %d", name, lives);
+
+                score.setText(scoreboard);
+                user.setText(text);
+
+                //Difficulty Increments:
+                if(points <= 5){
+                    runningTime = 2250;
+                }
+                else if(points > 5 && points <= 10){
+                    runningTime = 2000;
+                }
+                else if(points > 10 && points <= 15){
+                    runningTime = 1750;
+                }
+                else if(points > 15 && points <= 20){
+                    runningTime = 1500;
+                }
+                else{
+                    runningTime = 1000;
+                }
+                check.postDelayed(this, 10);
             }
-
-
-            check.postDelayed(this, 10);
         }
     };
-
-
+    
     /**
      * Activates Random Moles on an ever reducing span.
      */
@@ -390,6 +419,7 @@ public class gameActivity extends AppCompatActivity {
 
         @Override
         public void run() {
+            //Check to see if the previously selected mole was clicked:
             switch (selected){
                 case 1:
                     if(moleOne.isSelected()){
@@ -397,6 +427,7 @@ public class gameActivity extends AppCompatActivity {
                     }
                     else{
                         currentUser.lostLife();
+                        bruh.start();
                     }
                     break;
                 case 2:
@@ -405,6 +436,7 @@ public class gameActivity extends AppCompatActivity {
                     }
                     else{
                         currentUser.lostLife();
+                        bruh.start();
                     }
                     break;
                 case 3:
@@ -413,6 +445,7 @@ public class gameActivity extends AppCompatActivity {
                     }
                     else{
                         currentUser.lostLife();
+                        bruh.start();
                     }
                     break;
                 case 4:
@@ -421,6 +454,7 @@ public class gameActivity extends AppCompatActivity {
                     }
                     else{
                         currentUser.lostLife();
+                        bruh.start();
                     }
                     break;
                 case 5:
@@ -429,6 +463,7 @@ public class gameActivity extends AppCompatActivity {
                     }
                     else{
                         currentUser.lostLife();
+                        bruh.start();
                     }
                     break;
                 case 6:
@@ -437,6 +472,7 @@ public class gameActivity extends AppCompatActivity {
                     }
                     else{
                         currentUser.lostLife();
+                        bruh.start();
                     }
                     break;
                 case 7:
@@ -445,6 +481,7 @@ public class gameActivity extends AppCompatActivity {
                     }
                     else{
                         currentUser.lostLife();
+                        bruh.start();
                     }
                     break;
                 case 8:
@@ -453,6 +490,7 @@ public class gameActivity extends AppCompatActivity {
                     }
                     else{
                         currentUser.lostLife();
+                        bruh.start();
                     }
                     break;
                 case 9:
@@ -461,6 +499,7 @@ public class gameActivity extends AppCompatActivity {
                     }
                     else{
                         currentUser.lostLife();
+                        bruh.start();
                     }
                     break;
                 case 10:
@@ -469,6 +508,7 @@ public class gameActivity extends AppCompatActivity {
                     }
                     else{
                         currentUser.lostLife();
+                        bruh.start();
                     }
                     break;
                 default:
@@ -476,14 +516,15 @@ public class gameActivity extends AppCompatActivity {
             }
 
 
-
+            //Clear Holes:
             setInitialHoles();
             clearAllMoles();
+            //Select a new hole:
             moleSelect = new Random();
             selected = moleSelect.nextInt(9);
             selected++;
 
-
+            //Set image and set the mole as active:
             switch (selected){
                 case 1:
                     mole1.setImageResource(R.drawable.with_mole);
@@ -528,7 +569,7 @@ public class gameActivity extends AppCompatActivity {
                 default:
                     mole1.setImageResource(R.drawable.without_mole);
             }
-            elapsedTime = SystemClock.uptimeMillis() - systemTime;
+
             handler.postDelayed(this, runningTime);
         }
     };

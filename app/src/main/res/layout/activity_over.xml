@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/material_dynamic_tertiary20"
+    tools:context=".Activities.overActivity">
+
+    <TextView
+        android:id="@+id/final_display"
+        android:layout_width="403dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="72dp"
+        android:fontFamily="@font/atomic_age"
+        android:gravity="center"
+        android:text="@string/final_score"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/white"
+        android:textSize="48sp"
+        android:theme="@style/Base.CardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/banner" />
+
+    <TextView
+        android:id="@+id/banner"
+        android:layout_width="403dp"
+        android:layout_height="141dp"
+        android:fontFamily="@font/atomic_age"
+        android:gravity="center"
+        android:text="@string/game_over"
+        android:background="@color/white"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/black"
+        android:textSize="48sp"
+        android:theme="@style/Base.CardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/whack"
+        android:layout_width="199dp"
+        android:layout_height="114dp"
+        android:layout_marginTop="147dp"
+        android:background="@color/white"
+        android:fontFamily="@font/atomic_age"
+        android:onClick="onHomePressed"
+        android:text="@string/home"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/final_display" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
