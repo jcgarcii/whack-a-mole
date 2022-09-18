@@ -411,7 +411,7 @@ public class gameActivity extends AppCompatActivity {
             }
         }
     };
-    
+
     /**
      * Activates Random Moles on an ever reducing span.
      */
@@ -515,62 +515,67 @@ public class gameActivity extends AppCompatActivity {
                     currentUser.doNothing();
             }
 
-
-            //Clear Holes:
-            setInitialHoles();
-            clearAllMoles();
-            //Select a new hole:
-            moleSelect = new Random();
-            selected = moleSelect.nextInt(9);
-            selected++;
-
-            //Set image and set the mole as active:
-            switch (selected){
-                case 1:
-                    mole1.setImageResource(R.drawable.with_mole);
-                    moleOne.setActive();
-                    break;
-                case 2:
-                    mole2.setImageResource(R.drawable.with_mole);
-                    moleTwo.setActive();
-                    break;
-                case 3:
-                    mole3.setImageResource(R.drawable.with_mole);
-                    moleThree.setActive();
-                    break;
-                case 4:
-                    mole4.setImageResource(R.drawable.with_mole);
-                    moleFour.setActive();
-                    break;
-                case 5:
-                    mole5.setImageResource(R.drawable.with_mole);
-                    moleFive.setActive();
-                    break;
-                case 6:
-                    mole6.setImageResource(R.drawable.with_mole);
-                    moleSix.setActive();
-                    break;
-                case 7:
-                    mole7.setImageResource(R.drawable.with_mole);
-                    moleSeven.setActive();
-                    break;
-                case 8:
-                    mole8.setImageResource(R.drawable.with_mole);
-                    moleEight.setActive();
-                    break;
-                case 9:
-                    mole9.setImageResource(R.drawable.with_mole);
-                    moleNine.setActive();
-                    break;
-                case 10:
-                    mole10.setImageResource(R.drawable.with_mole);
-                    moleTen.setActive();
-                    break;
-                default:
-                    mole1.setImageResource(R.drawable.without_mole);
+            if(!currentUser.healthStatus())
+            {
+                currentUser.doNothing();
             }
+            else {
+                //Clear Holes:
+                setInitialHoles();
+                clearAllMoles();
+                //Select a new hole:
+                moleSelect = new Random();
+                selected = moleSelect.nextInt(9);
+                selected++;
 
-            handler.postDelayed(this, runningTime);
+                //Set image and set the mole as active:
+                switch (selected) {
+                    case 1:
+                        mole1.setImageResource(R.drawable.with_mole);
+                        moleOne.setActive();
+                        break;
+                    case 2:
+                        mole2.setImageResource(R.drawable.with_mole);
+                        moleTwo.setActive();
+                        break;
+                    case 3:
+                        mole3.setImageResource(R.drawable.with_mole);
+                        moleThree.setActive();
+                        break;
+                    case 4:
+                        mole4.setImageResource(R.drawable.with_mole);
+                        moleFour.setActive();
+                        break;
+                    case 5:
+                        mole5.setImageResource(R.drawable.with_mole);
+                        moleFive.setActive();
+                        break;
+                    case 6:
+                        mole6.setImageResource(R.drawable.with_mole);
+                        moleSix.setActive();
+                        break;
+                    case 7:
+                        mole7.setImageResource(R.drawable.with_mole);
+                        moleSeven.setActive();
+                        break;
+                    case 8:
+                        mole8.setImageResource(R.drawable.with_mole);
+                        moleEight.setActive();
+                        break;
+                    case 9:
+                        mole9.setImageResource(R.drawable.with_mole);
+                        moleNine.setActive();
+                        break;
+                    case 10:
+                        mole10.setImageResource(R.drawable.with_mole);
+                        moleTen.setActive();
+                        break;
+                    default:
+                        mole1.setImageResource(R.drawable.without_mole);
+                }
+
+                handler.postDelayed(this, runningTime);
+            }
         }
     };
 }

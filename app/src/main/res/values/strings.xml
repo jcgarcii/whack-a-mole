@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">whack-a-mole</string>
+    <string name="game_services_project_id">832878866251</string>
     <string name="title">Whack-A-Mole!</string>
     <string name="begin">Whack!</string>
     <string name="stats">Stats</string>
@@ -9,6 +10,8 @@
     <string name="current_user">User:</string>
     <string name="game_over">Game Over!</string>
     <string name="final_score">Final Score: by User</string>
+    <string name="leaders">Top Scores:</string>
     <string name="home">Go Home</string>
+
 
 </resources>

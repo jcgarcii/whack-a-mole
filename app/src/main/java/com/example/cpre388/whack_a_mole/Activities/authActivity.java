@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 
-
+import com.google.android.gms.games.PlayGamesSdk;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.cpre388.whack_a_mole.R;
 
@@ -33,6 +33,8 @@ public class authActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_auth);
+        PlayGamesSdk.initialize(this);
+
         //Assign ID's to our objects:
         logo = findViewById(R.id.moleLogo);
         music = MediaPlayer.create(authActivity.this, R.raw.enter_name);

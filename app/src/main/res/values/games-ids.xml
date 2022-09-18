@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Google Play game services IDs. Save this file as res/values/games-ids.xml in your project.-->
+<resources>
+    <!--app_id-->
+    <string name="app_id" translatable="false">832878866251</string>
+    <!--package_name-->
+    <string name="package_name" translatable="false">com.example.cpre388.whack_a_mole</string>
+    <!--achievement Whacked!-->
+    <string name="achievement_whacked" translatable="false">CgkIy97L254YEAIQAg</string>
+    <!--leaderboard Top Scores-->
+    <string name="leaderboard_top_scores" translatable="false">CgkIy97L254YEAIQAQ</string>
+</resources>

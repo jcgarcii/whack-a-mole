@@ -8,8 +8,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
+
 import com.example.cpre388.whack_a_mole.R;
 import com.example.cpre388.whack_a_mole.R.raw;
+import com.google.android.gms.games.PlayGamesSdk;
 
 /**
  * This is the title card activity for the application.
@@ -27,6 +29,8 @@ ImageView logo;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
 
         //Set Music, Logo:
         music = MediaPlayer.create(MainActivity.this, R.raw.background_music);
@@ -53,7 +57,7 @@ ImageView logo;
      * @param view for the current View object.
      */
     public void onStatsPressed(View view){
-        Intent stats = new Intent(MainActivity.this, gameActivity.class);
+        Intent stats = new Intent(MainActivity.this, statsActivity.class);
         music.stop();
         startActivity(stats);
     }
