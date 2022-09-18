@@ -121,6 +121,10 @@ public class gameActivity extends AppCompatActivity {
         moleTen.clear();
     }
 
+    /**
+     * First Mole onPress() Method
+     * @param view
+     */
     public void onMoleOne(View view){
         Boolean check = moleOne.getMole();
         Boolean clicked = moleOne.isSelected();
@@ -138,6 +142,11 @@ public class gameActivity extends AppCompatActivity {
             }
         }
     }
+
+    /**
+     * Second Mole onPress()Method
+     * @param view
+     */
     public void onMoleTwo(View view){
         Boolean check = moleTwo.getMole();
         Boolean clicked = moleTwo.isSelected();
@@ -153,8 +162,12 @@ public class gameActivity extends AppCompatActivity {
                 currentUser.doNothing();
             }
         }
-
     }
+
+    /**
+     * Third Mole onPress() method
+     * @param view
+     */
     public void onMoleThree(View view){
         Boolean check = moleThree.getMole();
         Boolean clicked = moleThree.isSelected();
@@ -171,8 +184,12 @@ public class gameActivity extends AppCompatActivity {
                 currentUser.doNothing();
             }
         }
-
     }
+
+    /**
+     * Fourth Mole onPress() method
+     * @param view
+     */
     public void onMoleFour(View view){
         Boolean check = moleFour.getMole();
         Boolean clicked = moleFour.isSelected();
@@ -188,8 +205,12 @@ public class gameActivity extends AppCompatActivity {
                 currentUser.doNothing();
             }
         }
-
     }
+
+    /**
+     * Fifth Mole onPress() method
+     * @param view
+     */
     public void onMoleFive(View view){
         Boolean check = moleFive.getMole();
         Boolean clicked = moleFive.isSelected();
@@ -205,8 +226,12 @@ public class gameActivity extends AppCompatActivity {
                 currentUser.doNothing();
             }
         }
-
     }
+
+    /**
+     * Sixth Mole onPress() Method
+     * @param view
+     */
     public void onMoleSix(View view){
         Boolean check = moleSix.getMole();
         Boolean clicked = moleSix.isSelected();
@@ -223,6 +248,11 @@ public class gameActivity extends AppCompatActivity {
             }
         }
     }
+
+    /**
+     * Seventh Mole onPress() method
+     * @param view
+     */
     public void onMoleSeven(View view){
         Boolean check = moleSeven.getMole();
         Boolean clicked = moleSeven.isSelected();
@@ -237,8 +267,12 @@ public class gameActivity extends AppCompatActivity {
                 currentUser.doNothing();
             }
         }
-
     }
+
+    /**
+     * Eighth Mole onPress() Method
+     * @param view
+     */
     public void onMoleEight(View view){
         Boolean check = moleEight.getMole();
         Boolean clicked = moleEight.isSelected();
@@ -255,6 +289,11 @@ public class gameActivity extends AppCompatActivity {
             }
         }
     }
+
+    /**
+     * Ninth Mole onPress() method
+     * @param view
+     */
     public void onMoleNine(View view){
         Boolean check = moleNine.getMole();
         Boolean clicked = moleNine.isSelected();
@@ -270,8 +309,12 @@ public class gameActivity extends AppCompatActivity {
                 currentUser.doNothing();
             }
         }
-
     }
+
+    /**
+     * Tenth Mole onPress() method
+     * @param view
+     */
     public void onMoleTen(View view){
         Boolean check = moleTen.getMole();
         Boolean clicked = moleTen.isSelected();
