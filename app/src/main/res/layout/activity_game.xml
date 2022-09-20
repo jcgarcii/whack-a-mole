@@ -8,9 +8,30 @@
     tools:context=".Activities.gameActivity">
 
     <TextView
+        android:id="@+id/hiscore"
+        android:layout_width="163dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="0sp"
+        android:layout_marginTop="40dp"
+        android:background="@color/material_dynamic_primary10"
+        android:contentDescription="@string/high_score"
+        android:fontFamily="@font/atomic_age"
+        android:gravity="start|center"
+        android:text="@string/high"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textColor="@color/white"
+        android:textSize="35sp"
+        android:theme="@style/Base.CardView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintStart_toEndOf="@+id/user"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/user"
         android:layout_width="211dp"
         android:layout_height="50dp"
+        android:layout_marginTop="12dp"
         android:background="@color/black"
         android:fontFamily="@font/atomic_age"
         android:gravity="start|center"
@@ -20,6 +41,7 @@
         android:textSize="35sp"
         android:theme="@style/Base.CardView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,6 +82,7 @@
         app:layout_constraintEnd_toStartOf="@+id/mole7"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mole4"
+        tools:ignore="SpeakableTextPresentCheck"
         tools:srcCompat="@sample/withoutMole.png" />
 
     <ImageView
@@ -116,6 +139,7 @@
         android:id="@+id/score_board"
         android:layout_width="211dp"
         android:layout_height="50dp"
+        android:layout_marginTop="4dp"
         android:background="@color/white"
         android:fontFamily="@font/atomic_age"
         android:gravity="start|center"
@@ -125,6 +149,7 @@
         android:textSize="35sp"
         android:theme="@style/Base.CardView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/user" />
 

@@ -1,6 +1,8 @@
 package com.example.cpre388.whack_a_mole.Activities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
@@ -38,10 +40,17 @@ public class gameActivity extends AppCompatActivity {
     moleModel moleTen;
     //User Object:
     userModel currentUser;
+    //High Score Vars:
+    SharedPreferences leader;
+    private final String PREFERENCE_FILE_KEY = "com.example.cpre388.whack_a_mole.Activities";
+    private final String PLAYER = "User";
+    private final String SCORES = "Scores";
+    private final int saved_high_score_default_key = 0;
     //View Objects:
     ImageView mole1;ImageView mole2;ImageView mole3;ImageView mole4;
     ImageView mole5;ImageView mole6;ImageView mole7;ImageView mole8;
     ImageView mole9;ImageView mole10;TextView user; TextView score;
+    TextView leaderBoard;
     //Sound Effects:
     MediaPlayer wonk;
     MediaPlayer bruh;
@@ -54,6 +63,12 @@ public class gameActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
+        //High Score:
+        leader = getSharedPreferences(PREFERENCE_FILE_KEY, MODE_PRIVATE);
+        String highScore = leader.getString(SCORES, "");
+        String player = leader.getString(PLAYER, "");
+        String set = String.format("HI: %s", highScore);
+
         //Assign ID's to our Objects:
         mole1 = findViewById(R.id.mole1);
         mole2 = findViewById(R.id.mole2);
@@ -65,10 +80,17 @@ public class gameActivity extends AppCompatActivity {
         mole8 = findViewById(R.id.mole8);
         mole9 = findViewById(R.id.mole9);
         mole10 = findViewById(R.id.mole10);
+
+        //Texts:
         user = findViewById(R.id.user);
         score = findViewById(R.id.score_board);
+        leaderBoard = findViewById(R.id.hiscore);
+        leaderBoard.setText(set);
+
+        //Audio:
         wonk = MediaPlayer.create(gameActivity.this, R.raw.wonk);
         bruh = MediaPlayer.create(gameActivity.this, R.raw.bruh);
+
         //initializes the moles:
         moleOne = new moleModel();
         moleTwo = new moleModel();
@@ -80,18 +102,22 @@ public class gameActivity extends AppCompatActivity {
         moleEight = new moleModel();
         moleNine = new moleModel();
         moleTen = new moleModel();
+
         //Set's the Username and initializes the current user:
         Intent intent = getIntent();
         String name = intent.getStringExtra(authActivity.EXTRA_MESSAGE);
         currentUser = new userModel(name, 3);
+
         //initialize two handler objects:
         handler = new Handler();
         check = new Handler();
+
         //sets up game defaults:
         String text = String.format("%s - %d", currentUser.getName(), currentUser.getLivesLeft());
         user.setText(text);
         setInitialHoles();
         clearAllMoles();
+
         //initialize handler, time
         selected = 0;
         systemTime = SystemClock.uptimeMillis();
@@ -383,10 +409,11 @@ public class gameActivity extends AppCompatActivity {
                 //Initialize Intent
                 Intent end = new Intent(gameActivity.this, overActivity.class);
                 exit = String.format("Final Score %d by %s", points, name);
+                String mPoints = String.format("%d", points);
                 //Pass of extra messages:
                 end.putExtra(EXTRA_MESSAGE, exit);
                 end.putExtra(PLAYER_NAME, name);
-                end.putExtra(PLAYER_SCORE, points);
+                end.putExtra(PLAYER_SCORE, mPoints);
                 //Stops sound, in the event of continued spam
                 bruh.stop();
                 //start

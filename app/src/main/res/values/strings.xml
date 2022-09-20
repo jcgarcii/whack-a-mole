@@ -12,6 +12,8 @@
     <string name="final_score">Final Score: by User</string>
     <string name="leaders">Top Scores:</string>
     <string name="home">Go Home</string>
+    <string name="high">HI:</string>
+    <string name="high_score">High Score</string>
 
 
 </resources>

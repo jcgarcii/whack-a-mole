@@ -19,7 +19,7 @@ public class overActivity extends AppCompatActivity {
     MediaPlayer music;
     SharedPreferences leader;
     Context context;
-    private final String PREFERENCE_FILE_KEY = "com.example.cpre388.whack_a_mole.Activities.overActivity";
+    private final String PREFERENCE_FILE_KEY = "com.example.cpre388.whack_a_mole.Activities";
     private final String PLAYER = "User";
     private final String SCORES = "Scores";
     private final int saved_high_score_default_key = 0;
@@ -39,19 +39,23 @@ public class overActivity extends AppCompatActivity {
 
         //Shared Preferences Setup:
         leader = context.getSharedPreferences(PREFERENCE_FILE_KEY, Context.MODE_PRIVATE);
-        int defaultValue = getResources().getInteger(saved_high_score_default_key);
-        int previousHigh = leader.getInt(SCORES, defaultValue);
+        String previousHigh = leader.getString(SCORES, "");
         SharedPreferences.Editor editor = leader.edit();
 
-        //retrieve the extra strings
+        //Retrieve the extra strings
         String finalScore = intent.getStringExtra(gameActivity.EXTRA_MESSAGE);
         String player = intent.getStringExtra(gameActivity.PLAYER_NAME);
-        String mScore = intent.getStringExtra(gameActivity.PLAYER_SCORE);
-        int score = Integer.getInteger(mScore);
+        String score = intent.getStringExtra(gameActivity.PLAYER_SCORE);
+
 
         //check if previous score is higher:
-        if(previousHigh < score){
-            editor.putInt(SCORES, score);
+        if(previousHigh.isEmpty()){
+            editor.putString(SCORES, score);
+            editor.putString(PLAYER, player);
+            editor.apply();
+        }
+        else if(!previousHigh.isEmpty() && Integer.parseInt(previousHigh) < Integer.parseInt(score)){
+            editor.putString(SCORES, score);
             editor.putString(PLAYER, player);
             editor.apply();
         }
