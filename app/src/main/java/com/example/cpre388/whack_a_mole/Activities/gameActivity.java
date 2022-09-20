@@ -20,6 +20,9 @@ import com.example.cpre388.whack_a_mole.Models.userModel;
  */
 public class gameActivity extends AppCompatActivity {
     public static final String EXTRA_MESSAGE = "com.example.cpre388.whack_a_mole.MESSAGE";
+    public static final String PLAYER_NAME = "com.example.cpre388.whack_a_mole.PLAYER";
+    public static final String PLAYER_SCORE = "com.example.cpre388.whack_a_mole.SCORE";
+
     //Time Values:
     private long systemTime, runningTime;
     //Handler Objects:
@@ -380,8 +383,13 @@ public class gameActivity extends AppCompatActivity {
                 //Initialize Intent
                 Intent end = new Intent(gameActivity.this, overActivity.class);
                 exit = String.format("Final Score %d by %s", points, name);
+                //Pass of extra messages:
                 end.putExtra(EXTRA_MESSAGE, exit);
+                end.putExtra(PLAYER_NAME, name);
+                end.putExtra(PLAYER_SCORE, points);
+                //Stops sound, in the event of continued spam
                 bruh.stop();
+                //start
                 startActivity(end);
             }
             else{
