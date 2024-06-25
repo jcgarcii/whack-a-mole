@@ -1,4 +1,3 @@
-# https---github.com-jcgarcii-cpre388lproject1
+# Whack-A-Mole Android Game
 
-This is our group's project 1 for CPR E 388. 
-We are building a whack-a-mole game on Android.
+This is a simple whack-a-mole game built using Java for Android OS devices. This was a part of a class project, while it would be simpler to use a remote database such as Firebase, in this situation - the challenge for the project was to store data locally efficeintly and safely. 
